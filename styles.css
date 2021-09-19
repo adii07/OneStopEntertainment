@@ -224,14 +224,17 @@ hr {
     padding: 1rem;
     
 }
-#search-bar input[type=text]{
+#search-bar textarea{
     border: 0.1emem solid black;
     align-self: center;
     padding: 1px 2px;
 height: auto;
 }
-
+#search-btn:hover{
+    cursor: pointer;
+}
 #search-bar button{
     border: 0.1em solid black;
     padding: 1px 2px;
+    
 }
