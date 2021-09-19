@@ -214,3 +214,24 @@ hr {
     display: block;
   }
 }
+
+
+/* Search bar */
+#search-bar {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
+    
+}
+#search-bar input[type=text]{
+    border: 0.1emem solid black;
+    align-self: center;
+    padding: 1px 2px;
+height: auto;
+}
+
+#search-bar button{
+    border: 0.1em solid black;
+    padding: 1px 2px;
+}
