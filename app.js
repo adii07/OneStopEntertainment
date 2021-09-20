@@ -34,7 +34,7 @@ function errorHandler(error) {
 }
 
 function setValues(movieDirector,movieYear,movieGenre,movieActors,movieAwards,movieRating,moviePlot,moviePoster){
-  //  $("#hidden").toggle();
+    document.getElementById("hidden").style.visibility="visible";
     document.getElementById("movieDirector").innerText=movieDirector
     document.getElementById("movieYear").innerText=movieYear
     document.getElementById("movieGenre").innerText=movieGenre

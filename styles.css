@@ -242,10 +242,12 @@ height: auto;
 /* #details{
     display: inline;
 } */
-/* #hidden{
+#hidden{
     visibility:hidden;
-} */
-
+}
+#moviePoster{
+  visibility: visible;
+}
 #moviePlot{
     max-width: 50%;
 }
