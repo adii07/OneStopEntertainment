@@ -201,6 +201,9 @@ hr {
     max-width: 100%;
     width: 100%;
   }
+  .nav-brand{
+    font-size: 1rem;
+  }
 
   .list-item-inline {
     display: inline;
