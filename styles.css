@@ -252,15 +252,18 @@ hr {
 /* #details{
     display: inline;
 } */
-#hidden{
+/* #hidden{
     visibility:collapse;
+}
+#hidden label{
+  color: white;
 }
 #moviePoster{
   visibility: visible;
 }
 #moviePlot{
     max-width: 50%;
-}
+} */
 
 
 

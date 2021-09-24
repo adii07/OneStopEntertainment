@@ -1,10 +1,10 @@
-var searchBar=document.querySelector("#user-input")
-var btnSearch=document.getElementById("search-btn")
+const main = document.getElementById('main');
+const form =  document.getElementById('form');
+const search = document.getElementById('search');
 
-btnSearch.addEventListener("click",onClickAction)
-
-function onClickAction(){
-    var Userinput=searchBar.value
+form.addEventListener("submit",(onClickAction)=>{
+    onClickAction.preventDefault();
+    var Userinput=search.value
     var validURL=getValidURL(Userinput)
 
     fetch(validURL)
@@ -23,7 +23,7 @@ function onClickAction(){
         setValues(movieDirector,movieYear,movieGenre,movieActors,movieAwards,movieRating,moviePlot,moviePoster,movieSeasons)
     })
     .catch(errorHandler)
-}
+})
 
 function getValidURL(input){
     var url= "http://www.omdbapi.com/?t="+input+"&apikey=4ee074d"
@@ -35,15 +35,19 @@ function errorHandler(error) {
 }
 
 function setValues(movieDirector,movieYear,movieGenre,movieActors,movieAwards,movieRating,moviePlot,moviePoster,movieSeasons){
-    document.getElementById("hidden").style.visibility="visible";
-    document.getElementById("movieDirector").innerText=movieDirector
-    document.getElementById("movieYear").innerText=movieYear
-    document.getElementById("movieGenre").innerText=movieGenre
-    document.getElementById("movieActors").innerText=movieActors
-    document.getElementById("movieAwards").innerText=movieAwards
+    document.getElementById("hidden").style.display="block";
+    //document.getElementById("main").style.display="flex";
+    movieTitle=search.value
+    // // document.getElementById("movieDirector").innerText=movieDirector
+    // // // document.getElementById("movieYear").innerText=movieYear
+    // // document.getElementById("movieGenre").innerText=movieGenre
+    // // document.getElementById("movieActors").innerText=movieActors
+    // // document.getElementById("movieAwards").innerText=movieAwards
     document.getElementById("movieRating").innerText=movieRating
+    document.getElementById("movietitle").innerText=movieTitle
     document.getElementById("moviePlot").innerText=moviePlot
     document.getElementById("moviePoster").src=moviePoster
-    document.getElementById("movieSeasons").innerText=movieSeasons
-    
+    // // document.getElementById("movieSeasons").innerText=movieSeasons       
 }
+
+

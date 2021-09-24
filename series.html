@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneStopEntertainment</title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
     <nav class="navigation container">
         <div class="nav-brand">OneStopEntertainment</div>
@@ -22,21 +24,31 @@
                 <a class="link" href="/">Music</a>
             </li>
         </ul>
-    </nav>    
+    </nav>
 
     <!-- Search bar -->
     <div id="search-bar">
-        <input  id="user-input"type="input" placeholder="Search with Series name" style="font-size: larger;">
-        <button id="search-btn"><i class="material-icons">search</i></button>
+        <form id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+
     </div>
 
 
 
-    <div id="hidden" class="container-center" style="margin: auto;padding: 1rem;">
-        <div id="details" style="text-align: center">
-            <img id="moviePoster"src="images/netflix.svg"style="width:250px;height:250px;padding: 2em;">
+    <div id="hidden" class="container-center" style="margin: auto;padding: 1rem; display: none;">
+        <div class="movie" style="margin: auto;">
+            <img id="moviePoster" src="" alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Game Of Thrones</h3>
+                <span id="movieRating" class="green">9.2</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after
+                being dormant for millennia.
+            </div>
         </div>
-        <div id="details" style="text-align: center;">
+        <!-- <div id="details" style="text-align: center;">
             <label>Director :</label><br><label id="movieDirector"></label>
             <hr>
             <label>Year :</label><br><label id="movieYear"> </label>
@@ -53,11 +65,273 @@
             <hr>
             <label>Plot :</label><br><label id="moviePlot"> </label>
             <hr>
-        </div>
-        
+        </div> -->
+
     </div>
 
 
+    <div id="main" style="display: flex;">
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Game Of Thrones</h3>
+                <span id="movieRating" class="green">9.2</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after
+                being dormant for millennia.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Friends</h3>
+                <span id="movieRating" class="green">8.9</span>
+            </div>
+            <div id="moviePlot" class="overview">Follows the personal and professional lives of six twenty to
+                thirty-something-year-old friends living in Manhattan.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BZDJjOTg4OWYtYWIyOS00MjQ3LTg5ZDktYzU2N2RkNmYzNjZlXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">YOU</h3>
+                <span id="movieRating" class="green">7.7</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into
+                the lives of those he is transfixed by.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTlhMTYtZTA3ZWFkODRkNmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="">Breaking Bad</h3>
+                <span id="movieRating" class="green">9.4</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling
+                methamphetamine in order to secure his family's future.
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BZmU5NTcwNjktODIwMi00ZmZkLTk4ZWUtYzVjZWQ5ZTZjN2RlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">The Walking Dead</h3>
+                <span id="movieRating" class="green">8.2</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins and must lead a group of
+                survivors to stay alive.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NmIyLWE0ZmQtZDg2YjlmMzczZDZiXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">The Big Bang Theory</h3>
+                <span id="movieRating" class="green">8.1</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A woman who moves into an apartment across the hall from two brilliant but socially awkward physicists
+                shows them how little they know about life outside of the laboratory.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BODIyNzk5NDg5M15BMl5BanBnXkFtZTgwMTE5NjA5MjI@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Ozark</h3>
+                <span id="movieRating" class="green">8.4</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A financial advisor drags his family from Chicago to the Missouri Ozarks, where he must launder money to
+                appease a drug boss.
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BN2NlNGYwYTUtMTczMi00NGVjLTgwMzUtNjBkZjIyNDc2NjcxXkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Mirzapur</h3>
+                <span id="movieRating" class="green">8.4</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A shocking incident at a wedding procession ignites a series of events entangling the lives of two
+                families in the lawless city of Mirzapur.
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BNjg1MDQ5MjQ2N15BMl5BanBnXkFtZTYwNjI5NjA3._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">How I Met Your Mother</h3>
+                <span id="movieRating" class="green">8.3</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A father recounts to his children - through a series of flashbacks - the journey he and his four best
+                friends took leading up to him meeting their mother.
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="moviePoster"
+                src="https://m.media-amazon.com/images/M/MV5BMjA0MDc1NTk0Ml5BMl5BanBnXkFtZTgwMTk2ODA5NDM@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">New Girl</h3>
+                <span id="movieRating" class="green">7.7</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                After a bad break-up, Jess, an offbeat young woman, moves into an apartment loft with three single men.
+                Although they find her behavior very unusual, the men support her - most of the time.
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BMjJlMjJlMzYtNmU5Yy00N2MwLWJmMjEtNWUwZWIyMGViZDgyXkEyXkFqcGdeQXVyOTAzMTc2MjA@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Sacred Games</h3>
+                <span id="movieRating" class="green">8.6</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the
+                officer on a quest to save Mumbai from cataclysm.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BODk4ZjU0NDUtYjdlOS00OTljLTgwZTUtYjkyZjk1NzExZGIzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Vikings</h3>
+                <span id="movieRating" class="green">8.5</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Vikings transports us to the brutal and mysterious world of Ragnar Lothbrok, a Viking warrior and farmer
+                who yearns to explore - and raid - the distant shores across the ocean.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BNWFlNTY5MzEtNDhhMy00YTRmLWJhYjMtM2JjODkyMGRkZmUzXkEyXkFqcGdeQXVyOTAzMTc2MjA@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Kota Factory</h3>
+                <span id="movieRating" class="green">9.2</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Dedicated to Shrimati SL Loney ji, Shri Irodov ji and Maanniya HC Verma ji, 'Kota Factory' is TVF's
+                latest original. India's first 'Black and White' show highlights the problems present day IIT-JEE
+                aspirants face in their day-to-day
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BY2U1ZTU4OWItNGU2MC00MTg1LTk4NzUtYTk3ODhjYjI0MzlmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">The Last Dance</h3>
+                <span id="movieRating" class="green">9.1</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                Charting the rise of the 1990's Chicago Bulls, led by Michael Jordan, one of the most notable dynasties
+                in sports history.
+            </div>
+        </div>
+
+
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BNmVmMmM5ZmItZDg0OC00NTFiLWIxNzctZjNmYTY5OTU3ZWU3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Suits</h3>
+                <span id="movieRating" class="green">8.4</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                On the run from a drug deal gone bad, brilliant college dropout Mike Ross finds himself working with
+                Harvey Specter, one of New York City's best lawyers.
+            </div>
+        </div>
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BNTkwOTE1ZDYtODQ3Yy00YTYwLTg0YWQtYmVkNmFjNGZlYmRiXkEyXkFqcGdeQXVyNTc4MjczMTM@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Loki</h3>
+                <span id="movieRating" class="green">8.4</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes place
+                after the events of “Avengers: Endgame.”
+            </div>
+        </div>
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BMTkzNjEzMDEzMF5BMl5BanBnXkFtZTgwMDI0MjE4MjE@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Peaky Blinders</h3>
+                <span id="movieRating" class="green">8.8</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of
+                their caps, and their fierce boss Tommy Shelby.
+            </div>
+        </div>
+
+        <div class="movie">
+            <img id="moviePoster" style="height: 400px;"
+                src="https://m.media-amazon.com/images/M/MV5BYTM3YWVhMDMtNjczMy00NGEyLWJhZDctYjNhMTRkNDE0ZTI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
+                alt="Movie Poster">
+            <div class="movie-info">
+                <h3 id="movietitle">Black Mirror</h3>
+                <span id="movieRating" class="green">8.8</span>
+            </div>
+            <div id="moviePlot" class="overview">
+                An anthology series exploring a twisted, high-tech multiverse where humanity's greatest innovations and
+                darkest instincts collide.
+            </div>
+        </div>
+
+    </div>
+
     <script src="series.js" type="text/javascript"></script>
 </body>
+
 </html>
