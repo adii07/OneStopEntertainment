@@ -11,8 +11,8 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  margin: 0px ; 
-  background-color:#020D16;
+  margin: 0px;
+  background-color: #020D16;
 }
 
 hr {
@@ -181,6 +181,7 @@ hr {
   text-align: center;
   margin: 3rem auto;
 }
+
 .showcase-list h1 {
   margin: 0.5rem;
 }
@@ -197,7 +198,7 @@ hr {
 
 @media (max-width: 900px) {
   body {
-    max-width: 95%;
+    max-width: 100%;
     width: 100%;
   }
 
@@ -217,35 +218,36 @@ hr {
 
 
 /* Search bar */
- #search-bar {
-    text-align: center;
-    margin: auto;
-    padding: 1rem;
-    
+#search-bar {
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+
 }
+
 /* #search-bar input{
     border: 0.1rem solid var(--primary-color);
     border-radius: 1rem;
     font-size: 1rem;
     align-self: center;
     padding: 1px 2px;
-} */ 
-.search{
+} */
+.search {
   background-color: var(--primary-color);
   border: 2px solid var(--primary-color);
-  padding:0.5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 1rem;
-  color:#fff;
+  color: #fff;
   font-family: inherit;
 }
 
-.search:focus{
-  outline:0;
+.search:focus {
+  outline: 0;
   background-color: var(--primary-color);
 }
 
-.search::placeholder{
+.search::placeholder {
   color: skyblue;
 }
 
@@ -268,7 +270,7 @@ hr {
 
 
 
-#main{
+#main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -279,17 +281,18 @@ hr {
   width: 300px;
   margin: 1rem;
   border-radius: 3px;
-  box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--primary-color);
-  position:relative;
+  position: relative;
   overflow: hidden;
 }
-.movie img{
-  width:100%;
+
+.movie img {
+  width: 100%;
 }
 
-.movie-info{
-  color:#eee;
+.movie-info {
+  color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -298,43 +301,43 @@ hr {
 }
 
 
-.movie-info h3{
+.movie-info h3 {
   margin-top: 0;
 }
 
 
-.movie-info span{
+.movie-info span {
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
 
-.movie-info span.green{
-  color:lightgreen;
+.movie-info span.green {
+  color: lightgreen;
 }
 
-.movie-info span.orange{
-  color:orange;
+.movie-info span.orange {
+  color: orange;
 }
 
-.movie-info span.red{
-  color:red;
+.movie-info span.red {
+  color: red;
 }
 
 
-.overview{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #fff;
   padding: 1rem;
   max-height: 100%;
-  transform:translateY(101%);
-  transition:transform 0.3s ease-in;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
 }
 
-.movie:hover .overview{
-  transform:translateY(0)
+.movie:hover .overview {
+  transform: translateY(0)
 }
