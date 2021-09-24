@@ -26,7 +26,7 @@ form.addEventListener("submit", (onClickAction) => {
 })
 
 function getValidURL(input) {
-    var url = "http://www.omdbapi.com/?t=" + input + "&apikey=4ee074d"
+    var url = "https://www.omdbapi.com/?t=" + input + "&apikey=4ee074d"
     return url
 }
 
