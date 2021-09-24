@@ -217,26 +217,36 @@ hr {
 
 
 /* Search bar */
-#search-bar {
+ #search-bar {
     text-align: center;
-    width: 50%;
     margin: auto;
     padding: 1rem;
     
 }
-#search-bar textarea{
-    border: 0.1emem solid black;
+/* #search-bar input{
+    border: 0.1rem solid var(--primary-color);
+    border-radius: 1rem;
+    font-size: 1rem;
     align-self: center;
     padding: 1px 2px;
-height: auto;
+} */ 
+.search{
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding:0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  color:#fff;
+  font-family: inherit;
 }
-#search-btn:hover{
-    cursor: pointer;
+
+.search:focus{
+  outline:0;
+  background-color: var(--primary-color);
 }
-#search-bar button{
-    border: 0.1em solid black;
-    padding: 1px 2px;
-    
+
+.search::placeholder{
+  color: skyblue;
 }
 
 /* #details{

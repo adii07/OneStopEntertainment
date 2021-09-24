@@ -1,15 +1,15 @@
-var searchBar=document.querySelector("#user-input")
-var btnSearch=document.getElementById("search-btn")
+var searchBar=document.getElementById("search")
+var btnSearch=document.getElementById("form")
 
-btnSearch.addEventListener("click",onClickAction)
-
-function onClickAction(){
+btnSearch.addEventListener("submit",(onClickAction)=>{
+    onClickAction.preventDefault()
     var Userinput=searchBar.value
     var validURL=getValidURL(Userinput)
 
     fetch(validURL)
     .then(response=> response.json())
     .then(json=>{
+        console.log(json)
         var movieDirector=json.Director
         var movieYear=json.Year
         var movieGenre=json.Genre
@@ -22,7 +22,7 @@ function onClickAction(){
         setValues(movieDirector,movieYear,movieGenre,movieActors,movieAwards,movieRating,moviePlot,moviePoster)
     })
     .catch(errorHandler)
-}
+})
 
 function getValidURL(input){
     var url= "http://www.omdbapi.com/?t="+input+"&apikey=4ee074d"
