@@ -190,6 +190,16 @@ function getColor(vote) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Removing the hightlighted genre tags as soon as the search command is given
+
+    if(selectedGenre.length !=0){   
+        selectedGenre.forEach(id => {
+            const hightlightedTag = document.getElementById(id);
+            hightlightedTag.style.backgroundColor='#083355'
+        })
+    }
+
+
     const searchTerm = search.value;
     if (searchTerm) {
         getMovies(searchURL + '&query=' + searchTerm)
