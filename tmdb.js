@@ -94,7 +94,7 @@ getMovies(API_URL);
 
 getGenre();
 
-
+var selectedGenre = []
 function getGenre(){
     tagsEl.innerHTML=''
 
@@ -103,6 +103,28 @@ function getGenre(){
         genre_holder.classList.add('tags')
         genre_holder.id=genre.id
         genre_holder.innerText=genre.name
+        genre_holder.addEventListener('click',()=>{
+            console.log("Genre id : "+genre.id)
+            if(selectedGenre.length==0){
+                selectedGenre.push(genre.id)
+                genre_holder.style.backgroundColor="#0A81AB"
+            }else{
+                if(selectedGenre.includes(genre.id)){
+                    selectedGenre.forEach((id, idx) => {
+                        if(id == genre.id){
+                            selectedGenre.splice(idx, 1);
+                            genre_holder.style.backgroundColor="#083355"
+                        }
+                    })
+                }else{
+                    selectedGenre.push(genre.id);
+                    genre_holder.style.backgroundColor="#0A81AB"
+                }
+            }
+            console.log(selectedGenre)
+            //Filter the movies based on genres
+            getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')))
+        })
         tagsEl.append(genre_holder)
     })
 }
@@ -151,11 +173,6 @@ function showMovies(data) {
         `
 
         main.appendChild(movieEl);
-
-        // document.getElementById(id).addEventListener('click', () => {
-        //   console.log(id)
-        //   openNav(movie)
-        // })
     })
 }
 
