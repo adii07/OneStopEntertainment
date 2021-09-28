@@ -344,3 +344,23 @@ hr {
 .movie:hover .overview {
   transform: translateY(0)
 }
+
+
+
+#tags{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.tags{
+  color: white;
+  background-color: #083355;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+}
