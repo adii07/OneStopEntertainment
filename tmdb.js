@@ -5,84 +5,83 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
-const genres = [
-    {
-      "id": 28,
-      "name": "Action"
-    },
-    {
-      "id": 12,
-      "name": "Adventure"
-    },
-    {
-      "id": 16,
-      "name": "Animation"
-    },
-    {
-      "id": 35,
-      "name": "Comedy"
-    },
-    {
-      "id": 80,
-      "name": "Crime"
-    },
-    {
-      "id": 99,
-      "name": "Documentary"
-    },
-    {
-      "id": 18,
-      "name": "Drama"
-    },
-    {
-      "id": 10751,
-      "name": "Family"
-    },
-    {
-      "id": 14,
-      "name": "Fantasy"
-    },
-    {
-      "id": 36,
-      "name": "History"
-    },
-    {
-      "id": 27,
-      "name": "Horror"
-    },
-    {
-      "id": 10402,
-      "name": "Music"
-    },
-    {
-      "id": 9648,
-      "name": "Mystery"
-    },
-    {
-      "id": 10749,
-      "name": "Romance"
-    },
-    {
-      "id": 878,
-      "name": "Science Fiction"
-    },
-    {
-      "id": 10770,
-      "name": "TV Movie"
-    },
-    {
-      "id": 53,
-      "name": "Thriller"
-    },
-    {
-      "id": 10752,
-      "name": "War"
-    },
-    {
-      "id": 37,
-      "name": "Western"
-    }
-  ]
+const genres = [{
+    "id": 28,
+    "name": "Action"
+  },
+  {
+    "id": 12,
+    "name": "Adventure"
+  },
+  {
+    "id": 16,
+    "name": "Animation"
+  },
+  {
+    "id": 35,
+    "name": "Comedy"
+  },
+  {
+    "id": 80,
+    "name": "Crime"
+  },
+  {
+    "id": 99,
+    "name": "Documentary"
+  },
+  {
+    "id": 18,
+    "name": "Drama"
+  },
+  {
+    "id": 10751,
+    "name": "Family"
+  },
+  {
+    "id": 14,
+    "name": "Fantasy"
+  },
+  {
+    "id": 36,
+    "name": "History"
+  },
+  {
+    "id": 27,
+    "name": "Horror"
+  },
+  {
+    "id": 10402,
+    "name": "Music"
+  },
+  {
+    "id": 9648,
+    "name": "Mystery"
+  },
+  {
+    "id": 10749,
+    "name": "Romance"
+  },
+  {
+    "id": 878,
+    "name": "Science Fiction"
+  },
+  {
+    "id": 10770,
+    "name": "TV Movie"
+  },
+  {
+    "id": 53,
+    "name": "Thriller"
+  },
+  {
+    "id": 10752,
+    "name": "War"
+  },
+  {
+    "id": 37,
+    "name": "Western"
+  }
+]
 
 
 const main = document.getElementById('main');
@@ -95,70 +94,71 @@ getMovies(API_URL);
 getGenre();
 
 var selectedGenre = []
-function getGenre(){
-    tagsEl.innerHTML=''
 
-    genres.forEach(genre=>{
-        const genre_holder=document.createElement('div')
-        genre_holder.classList.add('tags')
-        genre_holder.id=genre.id
-        genre_holder.innerText=genre.name
-        genre_holder.addEventListener('click',()=>{
-            console.log("Genre id : "+genre.id)
-            if(selectedGenre.length==0){
-                selectedGenre.push(genre.id)
-                genre_holder.style.backgroundColor="#0A81AB"
-            }else{
-                if(selectedGenre.includes(genre.id)){
-                    selectedGenre.forEach((id, idx) => {
-                        if(id == genre.id){
-                            selectedGenre.splice(idx, 1);
-                            genre_holder.style.backgroundColor="#083355"
-                        }
-                    })
-                }else{
-                    selectedGenre.push(genre.id);
-                    genre_holder.style.backgroundColor="#0A81AB"
-                }
+function getGenre() {
+  tagsEl.innerHTML = ''
+
+  genres.forEach(genre => {
+    const genre_holder = document.createElement('div')
+    genre_holder.classList.add('tags')
+    genre_holder.id = genre.id
+    genre_holder.innerText = genre.name
+    genre_holder.addEventListener('click', () => {
+      console.log("Genre id : " + genre.id)
+      if (selectedGenre.length == 0) {
+        selectedGenre.push(genre.id)
+        genre_holder.style.backgroundColor = "#0A81AB"
+      } else {
+        if (selectedGenre.includes(genre.id)) {
+          selectedGenre.forEach((id, idx) => {
+            if (id == genre.id) {
+              selectedGenre.splice(idx, 1);
+              genre_holder.style.backgroundColor = "#083355"
             }
-            console.log(selectedGenre)
-            //Filter the movies based on genres
-            getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')))
-        })
-        tagsEl.append(genre_holder)
+          })
+        } else {
+          selectedGenre.push(genre.id);
+          genre_holder.style.backgroundColor = "#0A81AB"
+        }
+      }
+      console.log(selectedGenre)
+      //Filter the movies based on genres
+      getMovies(API_URL + '&with_genres=' + encodeURI(selectedGenre.join(',')))
     })
+    tagsEl.append(genre_holder)
+  })
 }
 
 function getMovies(url) {
-    lastUrl = url;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data.results)
-            if (data.results.length !== 0) {
-                showMovies(data.results);
-            } else {
-                main.innerHTML = `<h1 class="no-results" style="color: white;">No Results Found</h1>`
-            }
+  lastUrl = url;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.results)
+      if (data.results.length !== 0) {
+        showMovies(data.results);
+      } else {
+        main.innerHTML = `<h1 class="no-results" style="color: white;">No Results Found</h1>`
+      }
 
-        })
+    })
 
 }
 
 function showMovies(data) {
-    main.innerHTML = '';
+  main.innerHTML = '';
 
-    data.forEach(movie => {
-        const {
-            title,
-            poster_path,
-            vote_average,
-            overview,
-            id
-        } = movie;
-        const movieEl = document.createElement('div');
-        movieEl.classList.add('movie');
-        movieEl.innerHTML = `
+  data.forEach(movie => {
+    const {
+      title,
+      poster_path,
+      vote_average,
+      overview,
+      id
+    } = movie;
+    const movieEl = document.createElement('div');
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = `
              <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
             <div class="movie-info">
                 <h3>${title}</h3>
@@ -167,44 +167,92 @@ function showMovies(data) {
             <div class="overview">
                 <h3>Overview</h3>
                 ${overview}
-                <br/>
+                <br/> 
+                <button class="know-more" id="${id}" style="cursor: pointer;">View Trailer</button
             </div>
         
         `
 
-        main.appendChild(movieEl);
+    main.appendChild(movieEl);
+    document.getElementById(id).addEventListener('click', () => {
+      console.log(id)
+      openNav(movie)
     })
+  })
 }
 
 function getColor(vote) {
-    if (vote >= 8) {
-        return 'green'
-    } else if (vote >= 5) {
-        return "orange"
-    } else {
-        return 'red'
-    }
+  if (vote >= 8) {
+    return 'green'
+  } else if (vote >= 5) {
+    return "orange"
+  } else {
+    return 'red'
+  }
 }
 
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Removing the hightlighted genre tags as soon as the search command is given
+  // Removing the hightlighted genre tags as soon as the search command is given
 
-    if(selectedGenre.length !=0){   
-        selectedGenre.forEach(id => {
-            const hightlightedTag = document.getElementById(id);
-            hightlightedTag.style.backgroundColor='#083355'
-        })
-    }
+  if (selectedGenre.length != 0) {
+    selectedGenre.forEach(id => {
+      const hightlightedTag = document.getElementById(id);
+      hightlightedTag.style.backgroundColor = '#083355'
+    })
+  }
 
 
-    const searchTerm = search.value;
-    if (searchTerm) {
-        getMovies(searchURL + '&query=' + searchTerm)
-    } else {
-        getMovies(API_URL);
-    }
+  const searchTerm = search.value;
+  if (searchTerm) {
+    getMovies(searchURL + '&query=' + searchTerm)
+  } else {
+    getMovies(API_URL);
+  }
 
 })
+
+
+
+const overlayContent = document.getElementById('overlay-content');
+/* Open when someone clicks on the span element */
+function openNav(movie) {
+  let id = movie.id;
+  fetch(BASE_URL + '/movie/' + id + '/videos?' + API_KEY).then(res => res.json()).then(videoData => {
+    console.log(videoData);
+    if (videoData) {
+      document.getElementById("myNav").style.width = "100%";
+      if (videoData.results.length > 0) {
+        var embed = [];
+        videoData.results.forEach((video) => {
+          let {
+            name,
+            key,
+            site
+          } = video
+
+          if (site == 'YouTube') {
+
+            embed.push(`
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          `)
+
+          }
+        })
+        overlayContent.innerHTML = embed.join('');
+      } else {
+        overlayContent.innerHTML = `<h1 class="no-results">No Results Found</h1>`
+      }
+    }
+  })
+}
+
+
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
