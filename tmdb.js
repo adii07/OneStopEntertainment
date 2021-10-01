@@ -168,7 +168,7 @@ function showMovies(data) {
                 <h3>Overview</h3>
                 ${overview}
                 <br/> 
-                <button class="know-more" id="${id}" style="cursor: pointer;">View Trailer</button
+                <button class="know-more" id="${id}" style="cursor: pointer;">Watch Trailer</button
             </div>
         
         `
